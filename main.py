@@ -32,7 +32,10 @@ def read_labels(filename: str, cap: int = None) -> list[int]:
         labels = [bytes_be_to_int_le(f.read(1)) for label in range(items_count)]
     return labels
 
+def get_data(images_path: str, labels_path: str, cap: int = None) -> tuple[list[list[list[int]]], list[int]]:
+    return (read_images(images_path, cap), read_labels(labels_path, cap))
 
 if __name__ == "__main__":
     print("Avvio lettura dati")
-    test_labels = read_labels(DATA_FILENAMES["TEST_LABELS"])
+    (train_images, train_labels) = get_data(DATA_FILENAMES["TRAIN_IMAGES"], DATA_FILENAMES["TRAIN_LABELS"], 1000)
+    (test_images, test_labels) = get_data(DATA_FILENAMES["TEST_IMAGES"], DATA_FILENAMES["TEST_LABELS"], 1000)
