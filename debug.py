@@ -1,0 +1,1 @@
+# TODO: Implementare esportazione immagini (ppt piazza)
