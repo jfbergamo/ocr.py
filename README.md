@@ -4,5 +4,6 @@ Semplice algoritmo di OCR per riconoscere numeri basato sul [database MNIST](htt
 
 Utilizzo:
 ```console
-$ python3 ./main.py
+$ pip install -r requirements.txt
+$ python3 ./ocr.py
 ```
